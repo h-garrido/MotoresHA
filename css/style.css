@@ -35,3 +35,6 @@
   body{
     background-color: rgb(237, 242, 244);
   }
+  .cards{
+    padding: 200px;
+  }
