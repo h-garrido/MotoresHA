@@ -1,0 +1,37 @@
+.navbar-brand{
+    background-color: rgb(217, 4, 41);
+    border: 7px;
+    border-style:groove;
+    border-color: rgb(255, 255, 255) rgb(255, 238, 238);
+    border-radius:100%;
+    font-size: 30px;
+    font-family:fantasy;
+    -webkit-text-fill-color: rgb(237, 242, 244);
+    -webkit-text-stroke-color: rgb(43, 45, 66);
+    -webkit-text-stroke: 2px;
+    margin-left: 30px;
+  }
+  .nav-link{
+    color: rgb(237, 242, 244);
+    font-variant-caps: all-petite-caps;
+    font-size: larger;
+    margin-right: 50px;
+  }
+  .masthead{
+    background-color: rgb(237, 242, 244);
+    padding: 50px;
+  }
+  .masthead-heading{
+    font-family:fantasy;
+    font-size: 50px;
+  }
+  .masthead-subheading{
+    font-style: oblique;
+    font-size: 20px;
+  }
+  .navbar{
+    background-color: rgb(43, 45, 66);
+  }
+  body{
+    background-color: rgb(237, 242, 244);
+  }
