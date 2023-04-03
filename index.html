@@ -18,8 +18,28 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+    <style>
+      .fondo {
+        position: fixed;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-image: url("img/background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.2;
+      }
+    </style>
   </head>
-  <body>
+    <div class="fondo"></div>
+
     <!-- NAVBAR -->
     <div class="row">
       <nav class="navbar navbar-expand-md">
@@ -101,11 +121,13 @@
         </div>
       </div>
     </header>
+
     <!-- DIVISOR -->
     <hr />
+
     <!-- TÍTULO CATEGORIAS -->
     <section class="seccion">
-      <h1 id="categoria" class="text-center">Categorías</h1>
+      <h1 id="categoria" class="text-center">CATEGORÍAS</h1>
 
       <!-- NUEVOS CARDS -->
       <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -151,14 +173,16 @@
         </div>
       </div>
     </section>
-    
+
+    <hr>
+
     <!-- CAROUSEL -->
     <section class="seccion">
       <h1 class="text-center my-5 heading">NOTICIAS</h1>
 
       <div class="container-xl">
         <div id="indicadores" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-indicators">
+          <div class="carousel-indicators custom-indicators">
             <button
               class="active"
               type="button"
@@ -175,41 +199,47 @@
               data-bs-target="#indicadores"
               data-bs-slide-to="2"
             ></button>
-            
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img
-                src="img/auto.png"
+                src="img/new1.jpeg"
                 alt="slide1"
-                class="d-block w-100"
+                class="d-block w-100 custom-image"
               />
               <div class="carousel-caption text-dark">
-                <h3>Título noticia 1</h3>
-                <p>Contenido noticia 1</p>
+                <h3>Tesla Model S Plaid ¡Toda una máquina eléctrica!</h3>
+                <p>
+                  EI vehículo de Tesla realmente tiene bajo su hermosa
+                  carrocería un imponente tren eléctrico
+                </p>
               </div>
-
             </div>
             <div class="carousel-item">
               <img
-                src="img/pickup.png"
+                src="img/new2.jpg"
                 alt="slide2"
-                class="d-block w-100"
+                class="d-block w-100 custom-image"
               />
               <div class="carousel-caption text-dark">
-                <h3>Título noticia 2</h3>
-                <p>Contenido noticia 2</p>
+                <h3>Mazda CX-50 Meridian Edition: ¡Un SUV todoterreno!</h3>
+                <p>
+                  La versión Meridian Edition ahora todoterreno con neumáticos y
+                  rines especiales, además de mejoras visuales.
+                </p>
               </div>
             </div>
             <div class="carousel-item">
               <img
-                src="img/galeria_03.jpg"
+                src="img/new3.jpg"
                 alt="slide3"
-                class="d-block w-100"
+                class="d-block w-100 custom-image"
               />
               <div class="carousel-caption text-dark">
-                <h3>Título noticia 3</h3>
-                <p>Contenido noticia 3</p>
+                <h3>
+                  Jeep Wrangler Rubicon 392: 476 CV para el Wrangler de
+                  producción más bestia
+                </h3>
               </div>
             </div>
             <button
@@ -232,8 +262,37 @@
           </div>
         </div>
       </div>
-    </section>
-    
+          
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="custom-footer">
+      <div class="container footer-content custom-container">
+        <div class="container">
+          <div class="row">
+            <div class="col" style="max-height: 5px;">
+              <p class="text-center">
+                &copy; 2023 Derechos Reservados - Motores HA!
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col d-flex justify-content-center">
+              <a href="https://www.facebook.com" target="_blank" class="mx-2">
+                <i class="fab fa-facebook footer-icon"></i>
+              </a>
+              <a href="https://www.twitter.com" target="_blank" class="mx-2">
+                <i class="fab fa-twitter footer-icon"></i>
+              </a>
+              <a href="https://www.instagram.com" target="_blank" class="mx-2">
+                <i class="fab fa-instagram footer-icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
@@ -249,7 +308,5 @@
       integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
       crossorigin="anonymous"
     ></script>
-  </body>
-</html>
   </body>
 </html>
