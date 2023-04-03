@@ -39,16 +39,19 @@
 body{
   background-color: rgb(237, 242, 244);
 }
+.card{
+  --bs-img-overlay-padding: 200px;
+}
 .btn-bd-primary {
   --bs-btn-font-weight: 600;
-  --bs-btn-color: var(--bs-white);
-  --bs-btn-bg: rgb(217, 4, 41);
+  --bs-btn-color: rgb(43, 45, 66);
+  --bs-btn-bg: rgb(237, 242, 244);
   --bs-btn-border-color: rgb(43, 45, 66);
-  --bs-btn-hover-color: rgb(217, 4, 41);
-  --bs-btn-hover-bg: --bs-white;
-  --bs-btn-hover-border-color: #{shade-color($bd-violet, 10%)};
-  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-  --bs-btn-active-color: var(--bs-btn-hover-color);
-  --bs-btn-active-bg: #{shade-color($bd-violet, 20%)};
-  --bs-btn-active-border-color: #{shade-color($bd-violet, 20%)};
+  --bs-btn-hover-color: white;
+  --bs-btn-hover-bg: rgb(239, 35, 60);
+  --bs-btn-hover-border-color: rgb(43, 45, 66);
+}
+.col{
+  padding: 50px;
+  margin-block-start: 1px;
 }

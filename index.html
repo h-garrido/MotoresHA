@@ -1,116 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-
-<!-- NAVBAR -->
-<div class="row">
-  <nav class="navbar navbar-expand-md">
-    <div class="container-fluid">
-      <a class="navbar-brand pt-md-1" href="#" >Motores HA!</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="iconosbarra collapse navbar-collapse text-sm-center justify-content-sm-end" id="navbarSupportedContent">
-        <ul class="navbar-nav m-md mb-md-0">
-          <li class="nav-item pt-md-2">
-            <a class="nav-link" href="#">Todos los vehículos</a>
-          </li>
-          <li class="nav-item pt-md-2">
-            <a class="nav-link" href="#">Vehículos nuevos</a>
-          </li>
-          <li class="nav-item pt-md-2">
-            <a class="nav-link" href="#">Vehículos usados</a>
-          </li>
-          <li class="nav-item pt-md-2">
-            <a class="nav-link" href="#">Vende tu vehículo HA!</a>
-          </li>
-        </ul>
-      </div>
+  <head>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div class="row">
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand pt-md-1" href="#">Motores HA!</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="iconosbarra collapse navbar-collapse text-sm-center justify-content-sm-end"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav m-md mb-md-0">
+              <li class="nav-item pt-md-2">
+                <a class="nav-link" href="#">Todos los vehículos</a>
+              </li>
+              <li class="nav-item pt-md-2">
+                <a class="nav-link" href="#">Vehículos nuevos</a>
+              </li>
+              <li class="nav-item pt-md-2">
+                <a class="nav-link" href="#">Vehículos usados</a>
+              </li>
+              <li class="nav-item pt-md-2">
+                <a class="nav-link" href="#">Vende tu vehículo HA!</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-  </nav>
-</div>
 
-
-<!-- HEADER -->
-<header class="masthead text-center">
-  <div class="masthead-content">
-      <div class="container px-5">
+    <!-- HEADER -->
+    <header class="masthead text-center">
+      <div class="masthead-content">
+        <div class="container px-5">
           <h1 class="masthead-heading mb-0">Bienvenido a Motores HA!</h1>
           <h2 class="masthead-subheading mb-0">¿Listo para cambiar tu auto?</h2>
+        </div>
       </div>
-  </div>
-</header>
+    </header>
 
-<hr>
+    <!-- DIVISOR -->
+    <hr />
 
-<section class="seccion">
-  <h1 class="text-center my-5 heading">Categorías</h1>
-  
+    <!-- TÍTULO CATEGORIAS -->
+    <section class="seccion">
+      <h1 id="categoria" class="text-center">Categorías</h1>
 
-<!-- CARDS -->
-
-<div class="container-xl">
-  <div class="row">
-
-<!-- AUTOS -->
-      <div class="col-md-4">
-        <div class="card mb-3">
-          <img
-            class="img-fluid mx-auto p-4"
-            src="img/auto.png"
-            alt="imagen-vehiculo"
-          />
-          <div class="card-body">
-            <h3 class="card-title">Automóviles</h3>
-            <p class="card-text">Descripción del Curso de Guitarra</p>
-            <a href="#" class="btn btn-bd-primary w-100">Visitar categoría</a>
+      <!-- NUEVOS CARDS -->
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="img/auto.png" class="img-fluid" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Automóviles</h5>
+              <p class="card-text">Sedán, Coupé, Convertibles, Hatchback, City Car.</p>
+            </div>
+            <div class="card-footer text-center">
+              <small class="btn btn-bd-primary w-50">Visitar categoría</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="img/suv.png" class="img-fluid" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Vehículos Medianos</h5>
+              <p class="card-text">SUV, SUV Compactos, Sedán SUV, Station Wagon, Van</p>
+            </div>
+            <div class="card-footer text-center">
+              <small class="btn btn-bd-primary w-50">Visitar categoría</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="img/pickup.png" class="img-fluid" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">Camionetas</h5>
+              <p class="card-text">Compactas, Medianas, Grandes</p>
+            </div>
+            <div class="card-footer text-center">
+              <small class="btn btn-bd-primary w-50">Visitar categoría</small>
+            </div>
           </div>
         </div>
       </div>
-
-<!-- MEDIANOS -->
-      <div class="col-md-4">
-        <div class="card mb-3">
-          <img
-            class="img-fluid mx-auto p-4"
-            src="img/suv.png"
-            alt="imagen-vehiculo"
-          />
-          <div class="card-body">
-            <h3 class="card-title">Vehículos Medianos</h3>
-            <p class="card-text">Descripción del Curso de Diseño Gráfico</p>
-            <a href="#" class="btn btn-bd-primary w-100">Visitar categoría</a>
-          </div>
-        </div>
-      </div>
-
-<!-- CAMIONETAS -->
-      <div class="col-md-4">
-        <div class="card mb-3">
-          <img
-            class="img-fluid mx-auto p-4"
-            src="img/pickup.png"
-            alt="imagen-vehiculo"
-          />
-          <div class="card-body">
-            <h3 class="card-title">Camionetas</h3>
-            <p class="card-text">
-              Descripción del Curso de Diseño de UX/UI
-            </p>
-            <a href="#" class="btn btn-bd-primary w-100">Visitar categoría</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-</body>
+    </section>
+  </body>
 </html>
