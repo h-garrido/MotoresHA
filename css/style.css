@@ -4,7 +4,7 @@
   border-style:groove;
   border-color: rgb(255, 255, 255) rgb(255, 238, 238);
   border-radius:100%;
-  font-size: 30px;
+  font-size: 50px;
   font-family:fantasy;
   -webkit-text-fill-color: rgb(237, 242, 244);
   -webkit-text-stroke-color: rgb(43, 45, 66);
@@ -15,7 +15,16 @@
   background-color: rgb(43, 45, 66);
   --bs-navbar-hover-color: rgb(239, 35, 60);
 }
-.nav-link, .dropdown{
+.dropdown{
+  margin-right: 50px;
+  color:rgb(239, 35, 60);
+}
+.bi-person-circle{
+  font-size: 200%;
+  color: white;
+  border-color: white;
+}
+.nav-link{
   color: rgb(237, 242, 244);
   font-variant-caps: all-petite-caps;
   font-size: larger;

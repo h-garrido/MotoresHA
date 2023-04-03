@@ -13,6 +13,10 @@
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -49,20 +53,39 @@
               <li class="nav-item pt-md-2 text-center">
                 <a class="nav-link" href="#">Vende tu vehículo HA!</a>
               </li>
-
-              <li id="dropdown" class="nav-item dropdown pt-md-2">
+              <!-- <li id="dropdown" class="nav-item dropdown pt-md-2 text-center">
                 <a 
-                  class="nav-link dropdown-toogle show text-center"
+                  class="nav-link"
                   href="#"
-                  role="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="true"
-                  >LOGIN</a>
+                  >login</a>
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-end">
                       <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
                       <li><a class="dropdown-item" href="#">Crear cuenta</a></li>
                     </ul>
-              </li>
+              </li> -->
+              <div class="dropdown">
+                <button
+                  class="btn dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="bi bi-person-circle"></i>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-lg-end"
+                  aria-labelledby="dropdownMenuButton"
+                >
+                  <a class="dropdown-item" href="#">
+                    <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="bi bi-person-add"></i> Crear Cuenta
+                  </a>
+                </div>
+              </div>
             </ul>
           </div>
         </div>
@@ -78,10 +101,8 @@
         </div>
       </div>
     </header>
-
     <!-- DIVISOR -->
     <hr />
-
     <!-- TÍTULO CATEGORIAS -->
     <section class="seccion">
       <h1 id="categoria" class="text-center">Categorías</h1>
@@ -90,10 +111,12 @@
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
           <div class="card h-100">
-            <img src="img/auto.png" class="img-fluid" alt="...">
+            <img src="img/auto.png" class="img-fluid" alt="..." />
             <div class="card-body text-center">
               <h5 class="card-title">Automóviles</h5>
-              <p class="card-text">Sedán, Coupé, Convertibles, Hatchback, City Car.</p>
+              <p class="card-text">
+                Sedán, Coupé, Convertibles, Hatchback, City Car.
+              </p>
             </div>
             <div class="card-footer text-center">
               <small class="btn btn-bd-primary w-50">Visitar categoría</small>
@@ -102,10 +125,12 @@
         </div>
         <div class="col">
           <div class="card h-100">
-            <img src="img/suv.png" class="img-fluid" alt="...">
+            <img src="img/suv.png" class="img-fluid" alt="..." />
             <div class="card-body text-center">
               <h5 class="card-title">Vehículos Medianos</h5>
-              <p class="card-text">SUV, SUV Compactos, Sedán SUV, Station Wagon, Van</p>
+              <p class="card-text">
+                SUV, SUV Compactos, Sedán SUV, Station Wagon, Van
+              </p>
             </div>
             <div class="card-footer text-center">
               <small class="btn btn-bd-primary w-50">Visitar categoría</small>
@@ -114,7 +139,7 @@
         </div>
         <div class="col">
           <div class="card h-100">
-            <img src="img/pickup.png" class="img-fluid" alt="...">
+            <img src="img/pickup.png" class="img-fluid" alt="..." />
             <div class="card-body text-center">
               <h5 class="card-title">Camionetas</h5>
               <p class="card-text">Compactas, Medianas, Grandes</p>
