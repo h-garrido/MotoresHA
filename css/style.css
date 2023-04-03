@@ -15,7 +15,7 @@
   background-color: rgb(43, 45, 66);
   --bs-navbar-hover-color: rgb(239, 35, 60);
 }
-.nav-link{
+.nav-link, .dropdown{
   color: rgb(237, 242, 244);
   font-variant-caps: all-petite-caps;
   font-size: larger;
