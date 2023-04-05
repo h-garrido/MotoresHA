@@ -53,8 +53,20 @@ hr {
   border-style:groove;
   border-color: black;
 }
+#categoria{
+  font-size: 60px;
+}
 .card {
+  background-color: rgb(237, 242, 244);
   --bs-img-overlay-padding: 200px;
+  --bs-border-radius: 12%;
+}
+.card-title{
+  font-size: 30px;
+}
+.img-fluid{
+  border-top-left-radius: 12%;
+  border-top-right-radius: 12%;
 }
 .btn-bd-primary {
   --bs-btn-font-weight: 600;
@@ -68,7 +80,7 @@ hr {
 }
 
 .btn-bd-primary:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 .col {
   padding: 50px;
