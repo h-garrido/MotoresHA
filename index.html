@@ -35,18 +35,20 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
-        opacity: 0.2;
+        opacity: 0.3;
+        filter: blur(3px) grayscale(100%);
       }
     </style>
   </head>
-    <div class="fondo"></div>
+  <div class="fondo"></div>
   <body>
-
     <!-- NAVBAR -->
     <div class="row">
       <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
-          <a class="navbar-brand pt-md-1" href="#">Motores HA</a>
+          <a class="navbar-brand pt-md-1" href="#">
+            <img id="logo" src="img/logo.png" alt="logo" />
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -119,7 +121,7 @@
       <div class="masthead-content">
         <div class="container px-5">
           <h1 class="masthead-heading mb-0">Bienvenido a Motores HA</h1>
-          <h2 class="masthead-subheading mb-0">¿Listo para cambiar tu auto?</h2>
+          <h2 class="masthead-subheading mb-0">Miles de autos y más!</h2>
         </div>
       </div>
     </header>
@@ -140,6 +142,18 @@
               <h5 class="card-title">Automóviles</h5>
               <p class="card-text">
                 Sedán, Coupé, Convertibles, Hatchback, City Car.
+                <hr>
+                <div id="vehicle_icons">
+                  <marquee direction="right" style="height: 60px;">
+                    <span style="position: relative; top: 10px; animation: move 0.4s infinite;">
+                    <img src="img/hatchback_icon.png" alt="hatchback_icon" width="120">
+                    <img src="img/convertible_icon.png" alt="convertible_icon" width="140">
+                    <img src="img/hatchback2_icon.png" alt="hatchback2_icon" width="120">
+                    <img src="img/citycar_icon.png" alt="citycar_icon" width="100">
+                    <img src="img/sedan_icon.png" alt="sedan_icon" width="140">
+                    </span>
+                  </marquee>
+                </div>
               </p>
             </div>
             <div class="card-footer text-center">
@@ -149,11 +163,22 @@
         </div>
         <div class="col">
           <div class="card h-100">
-            <img src="img/suv.png" class="img-fluid" alt="..."/>
+            <img src="img/suv.png" class="img-fluid" alt="..." />
             <div class="card-body text-center">
               <h5 class="card-title">Vehículos Medianos</h5>
               <p class="card-text">
                 SUV, SUV Compactos, Sedán SUV, Station Wagon, Van
+                <hr>
+                <div id="vehicle_icons">
+                  <marquee direction="right" style="height: 60px;">
+                    <span style="position: relative; top: 10px; animation: move 0.4s infinite;">
+                      <img src="img/suv_icon.png" alt="suv_icon" width="120">
+                      <img src="img/suv2_icon.png" alt="suv2_icon" width="120">
+                      <img src="img/suv3_icon.png" alt="suv3_icon" width="120">
+                      <img src="img/jeep_icon.png" alt="jeep_icon" width="130" style="filter: opacity(70%);">
+                    </span>
+                  </marquee>
+                </div>
               </p>
             </div>
             <div class="card-footer text-center">
@@ -167,6 +192,16 @@
             <div class="card-body text-center">
               <h5 class="card-title">Camionetas</h5>
               <p class="card-text">Compactas, Medianas, Grandes</p>
+              <hr>
+                <div id="vehicle_icons">
+                  <marquee direction="right" style="height: 60px;">
+                    <span style="position: relative; top: 10px; animation: move 0.4s infinite;">
+                      <img src="img/pickup_icon.png" alt="suv_icon" width="130">
+                      <img src="img/pickup2_icon.png" alt="pickup2_icon" width="140">
+                      <img src="img/pickup3_icon.png" alt="pickup3_icon" width="140"
+                    </span>
+                  </marquee>
+                </div>
             </div>
             <div class="card-footer text-center">
               <small class="btn btn-bd-primary w-50">Visitar categoría</small>
@@ -176,7 +211,7 @@
       </div>
     </section>
 
-    <hr>
+    <hr />
 
     <!-- CAROUSEL -->
     <section class="seccion">
@@ -272,7 +307,7 @@
       <div class="container footer-content custom-container">
         <div class="container">
           <div class="row">
-            <div class="col" style="max-height: 5px;">
+            <div class="col" style="max-height: 5px">
               <p class="text-center">
                 &copy; 2023 Derechos Reservados - Motores HA!
               </p>
