@@ -97,7 +97,7 @@ hr {
   font-size: 60px;
 }
 
-/* CARDS DE CETEGORÍA */
+/* CARDS DE CATEGORÍA */
 .card {
   background-color: rgb(232, 232, 232);
   --bs-img-overlay-padding: 200px;
@@ -158,43 +158,55 @@ hr {
   background-color: rgba(255, 255, 255, 50%);
   height: 100px;
 }
-footer {
+
+.custom-footer {
   background-color: #333;
   color: #fff;
+  font-size: 14px;
   padding: 20px 0;
+  margin: 0 auto;
 }
 
-footer a {
-  color: #fff;
-  text-decoration: none;
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-footer a:hover {
-  color: #ccc;
-}
-
-.footer-icon {
-  font-size: 70px;
-}
-.custom-footer {
-  /* Ajusta la altura según lo desees */
+.footer-row {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(45, 45, 45);;
+  flex-wrap: wrap;
 }
 
-.footer-content {
-  width: 100%;
-}
-.custom-container {
-  max-width: 700px; /* Ajusta el ancho máximo según lo desees */
+.footer-column {
+  width: 33.33%;
+  padding: 0 15px;
 }
 
-.custom-container p {
-  font-size: 14px; /* Ajusta el tamaño de fuente según lo desees */
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
 }
 
-.custom-container .footer-icon {
-  font-size: 60px; /* Ajusta el tamaño de los íconos según lo desees */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 10px;
+}
+
+.footer-social li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-social li a {
+  color: #fff;
+  font-size: 20px;
+}
+
+.footer-social li a:hover {
+  color: #ccc;
 }
