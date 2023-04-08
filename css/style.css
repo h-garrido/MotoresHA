@@ -62,27 +62,56 @@
   background-color: rgb(237, 242, 244);
 }
 
-.header{
-  color: rgb(45, 45, 45);
+/* ESTABLECE EL COMPORTAMIENTO DEL HEADER EN MÍNIMO DE PX*/
+@media (min-width: 602px) {
+  .header {
+    color: rgb(45, 45, 45);
+  }
+
+  /* ENCABEZADO */
+  .masthead {
+    padding: 40px;
+  }
+
+  /* TÍTULO DEL ENCABEZADO */
+  .masthead-heading {
+    font-family: fantasy;
+    font-size: 80px;
+    color: rgb(45, 45, 45);
+  }
+
+  /* SUBTEXTO DEL ENCABEZADO */
+  .masthead-subheading {
+    font-style: oblique;
+    font-size: 30px;
+    color: rgb(45, 45, 45);
+  }
 }
 
-/* ENCABEZADO */
-.masthead {
-  padding: 40px;
-}
+/* ESTABLECE EL COMPORTAMIENTO DEL HEADER EN MÁXIMO DE PX*/
+@media (max-width: 602px) {
+  .header {
+    color: rgb(45, 45, 45);
+  }
 
-/* TÍTULO DEL ENCABEZADO */
-.masthead-heading {
-  font-family: fantasy;
-  font-size: 80px;
-  color: rgb(45, 45, 45);
-}
+  /* ENCABEZADO */
+  .masthead {
+    padding: 10px;
+  }
 
-/* SUBTEXTO DEL ENCABEZADO */
-.masthead-subheading {
-  font-style: oblique;
-  font-size: 30px;
-  color: rgb(45, 45, 45);
+  /* TÍTULO DEL ENCABEZADO */
+  .masthead-heading {
+    font-family: fantasy;
+    font-size: 30px;
+    color: rgb(45, 45, 45);
+  }
+
+  /* SUBTEXTO DEL ENCABEZADO */
+  .masthead-subheading {
+    font-style: oblique;
+    font-size: 15px;
+    color: rgb(45, 45, 45);
+  }
 }
 
 /* DIVISOR */
@@ -92,9 +121,18 @@ hr {
   border-color: black;
 }
 
-/* TÍTULO CATEGORÍA */
-#categoria {
-  font-size: 60px;
+@media (MIN-width: 602px) {
+  /* TÍTULO CATEGORÍA */
+  #categoria {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 602px) {
+  /* TÍTULO CATEGORÍA */
+  #categoria {
+    font-size: 40px;
+  }
 }
 
 /* CARDS DE CATEGORÍA */
@@ -127,16 +165,22 @@ hr {
   transition: transform 0.2s ease-in-out;
 }
 @keyframes move {
-  0% { top: 1px; }
-  50% { top: 3px; }
-  100% { top: 1px; }
+  0% {
+    top: 1px;
+  }
+  50% {
+    top: 3px;
+  }
+  100% {
+    top: 1px;
+  }
 }
 
 .btn-bd-primary:hover {
   transform: scale(1.3);
 }
 
-#vehicle_icons{
+#vehicle_icons {
   padding-left: 0px;
 }
 .col {
