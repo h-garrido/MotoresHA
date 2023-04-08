@@ -116,6 +116,7 @@
 
 /* DIVISOR */
 hr {
+  margin: 1px;
   border-top-width: 7px;
   border-style: groove;
   border-color: black;
