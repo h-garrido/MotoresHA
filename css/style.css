@@ -62,7 +62,7 @@
   background-color: rgb(237, 242, 244);
 }
 
-/* ESTABLECE EL COMPORTAMIENTO DEL HEADER EN MÍNIMO DE PX*/
+/* COMPORTAMIENTO DEL HEADER EN MÍNIMO DE PX*/
 @media (min-width: 602px) {
   .header {
     color: rgb(45, 45, 45);
@@ -88,7 +88,7 @@
   }
 }
 
-/* ESTABLECE EL COMPORTAMIENTO DEL HEADER EN MÁXIMO DE PX*/
+/* COMPORTAMIENTO DEL HEADER EN MÁXIMO DE PX*/
 @media (max-width: 602px) {
   .header {
     color: rgb(45, 45, 45);
@@ -116,12 +116,14 @@
 
 /* DIVISOR */
 hr {
+  margin: 1px;
   border-top-width: 7px;
   border-style: groove;
   border-color: black;
 }
 
-@media (MIN-width: 602px) {
+/* COMPORTAMIENTO DEL TÍTULO */
+@media (min-width: 602px) {
   /* TÍTULO CATEGORÍA */
   #categoria {
     font-size: 60px;
@@ -131,15 +133,17 @@ hr {
 @media (max-width: 602px) {
   /* TÍTULO CATEGORÍA */
   #categoria {
-    font-size: 40px;
+    font-size: 25px;
   }
 }
 
 /* CARDS DE CATEGORÍA */
 .card {
   background-color: rgb(232, 232, 232);
-  --bs-img-overlay-padding: 200px;
-  --bs-border-radius: 12%;
+  --bs-img-overlay-padding: 20px;
+  --bs-border-radius: 66px;
+  border-color: black;
+  border-width: 2px;
 }
 
 /* TÍTULO DEL CARD */
@@ -149,21 +153,11 @@ hr {
 
 /* IMÁGENES DEL CARD */
 .img-fluid {
-  border-top-left-radius: 12%;
-  border-top-right-radius: 12%;
+  border-top-left-radius: 63px;
+  border-top-right-radius: 63px;
 }
 
-/* BOTÓN PRIMARIO */
-.btn-bd-primary {
-  --bs-btn-font-weight: 600;
-  --bs-btn-color: white;
-  --bs-btn-bg: rgb(232, 69, 69);
-  --bs-btn-border-color: rgb(43, 45, 66);
-  --bs-btn-hover-color: black;
-  --bs-btn-hover-bg: white;
-  --bs-btn-hover-border-color: rgb(43, 45, 66);
-  transition: transform 0.2s ease-in-out;
-}
+/* KEYFRAMES DE LOS ÍCONOS DE AUTITOS */
 @keyframes move {
   0% {
     top: 1px;
@@ -174,6 +168,18 @@ hr {
   100% {
     top: 1px;
   }
+}
+
+/* BOTÓN PRIMARIO */
+.btn-bd-primary {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: white;
+  --bs-btn-bg: rgb(232, 69, 69);
+  --bs-btn-border-color: black;
+  --bs-btn-hover-color: black;
+  --bs-btn-hover-bg: white;
+  --bs-btn-hover-border-color: rgb(43, 45, 66);
+  transition: transform 0.2s ease-in-out;
 }
 
 .btn-bd-primary:hover {
