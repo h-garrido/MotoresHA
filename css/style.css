@@ -146,6 +146,7 @@ hr {
   border-width: 2px;
 }
 
+/* CARD EN EL MEDIO */
 #auto_venta{
   position: absolute;
   top: 50%;
@@ -268,4 +269,9 @@ hr {
 
 .footer-social li a:hover {
   color: #ccc;
+}
+
+.list-group-item{
+  background-color: transparent;
+  border: transparent;
 }
