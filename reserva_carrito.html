@@ -79,13 +79,6 @@
                     <a class="nav-link" href="#">Vende tu vehículo HA!</a>
                 </li>
 
-                <!-- CARRITO DE RESERVAS -->
-                <!-- <li class="nav-item pt-md-2 text-center">
-                  <a class="nav-link" href="#" id="carrito-reserva">
-                    <i class="bi bi-cart"></i> Carrito de Reservas
-                  </a>
-                </li> -->
-
                 <!-- BOTON DE LOGIN -->
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
@@ -109,9 +102,10 @@
     </div>
 </nav>
 
-<!-- Carrito de Reservas -->
-<section class="seccion" style="margin: 50px;">
-    <div class="container">
+<!-- CARRITO DE RESERVAS -->
+
+<section class="mt-5 mx-auto">
+    <div class="container-fluid mb-5">
         <div class="row">
             <div class="col-12">
                 <h2 class="text-center mb-4">Carrito de Reservas</h2>
@@ -146,87 +140,89 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
+            <div class="container-fluid col-md-4 col-12 mb-4 pb-5">
+                <div class="card h-100">
                     <div class="card-header text-center">Resumen del Carrito</div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <strong>Subtotal:</strong> $<span id="subtotal">250.00</span>
-                        </p>
-                        <p class="card-text">
-                            <strong>Impuestos (10%):</strong> $<span id="impuestos">25.00</span>
-                        </p>
-                        <hr />
-                        <p class="card-text">
-                            <strong>Total:</strong> $<span id="total">275.00</span>
-                        </p>
-
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <p class="card-text">
+                                <strong>Subtotal:</strong> $<span id="subtotal">250.00</span>
+                            </p>
+                            <p class="card-text">
+                                <strong>Impuestos (10%):</strong> $<span id="impuestos">25.00</span>
+                            </p>
+                            <hr />
+                            <p class="card-text">
+                                <strong>Total:</strong> $<span id="total">275.00</span>
+                            </p>
+                        </div>
                         <div class="container-fluid text-center">
                             <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#modalForm">Proceder al Formulario de Reservas</button>
                         </div>
-                        <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="modalFormLabel"
-                            style="display: none;" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2 class="modal-title" id="modalFormLabel">Ingreso de Datos del Cliente</h2>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="">
-                                            <legend>
-                                                <i class="bi bi-person-fill-add"></i> Nuevo Cliente
-                                            </legend>
-                                            <div class="mb-3">
-                                                <label for="nombre" class="form-label">Nombres</label>
-                                                <input id="nombre" type="text" class="form-control" />
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="apellidos" class="form-label">Apellidos</label>
-                                                <input id="apellidos" type="text" class="form-control" />
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="rut" class="form-label">RUT</label>
-                                                <input id="rut" type="text" class="form-control" />
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="domicilio" class="form-label">Domicilio</label>
-                                                <input id="domicilio" type="text" class="form-control" />
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="telefono" class="form-label">Teléfono</label>
-                                                <input id="telefono" type="number" class="form-control" />
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="email" class="form-label">Email</label>
-                                                <input id="email" type="email" class="form-control" />
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                            Cerrar
-                                        </button>
-                                        <button type="submit" class="btn btn-success">
-                                            <i class="bi bi-plus-circle"></i> Registrar Cliente
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
+            <!-- Modal -->
+            <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="modalFormLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="modalFormLabel">Ingreso de Datos del Cliente</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="">
+                                <legend>
+                                    <i class="bi bi-person-fill-add"></i> Nuevo Cliente
+                                </legend>
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombres</label>
+                                    <input id="nombre" type="text" class="form-control" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="apellidos" class="form-label">Apellidos</label>
+                                    <input id="apellidos" type="text" class="form-control" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="rut" class="form-label">RUT</label>
+                                    <input id="rut" type="text" class="form-control" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="domicilio" class="form-label">Domicilio</label>
+                                    <input id="domicilio" type="text" class="form-control" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="telefono" class="form-label">Teléfono</label>
+                                    <input id="telefono" type="number" class="form-control" />
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input id="email" type="email" class="form-control" />
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-plus-circle"></i> Registrar Reserva
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
+    </div>
+    </div>
+    </div>
 </section>
-  
 
 </div> <!-- FOOTER -->
 <footer class="custom-footer d-flex justify-content-center align-items-center fixed-bottom">
