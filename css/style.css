@@ -146,6 +146,13 @@ hr {
   border-width: 2px;
 }
 
+#auto_venta{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* TÍTULO DEL CARD */
 .card-title {
   font-size: 30px;
