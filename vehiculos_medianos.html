@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ICONOS BOOTSTRAP -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+   
+    <!-- FONT AWESOME -->
+    
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    
+    <!-- ARCHIVO STYLE.CSS -->
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      .centrado {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+      }
+    </style>
+    
+    <!-- IMAGEN DE FONDO -->
+    <style>
+      .fondo {
+        position: fixed;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-image: url("img/background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+        filter: blur(3px) grayscale(100%);
+      }
+    </style>
+    <title>Motores HA</title>
+  </head>
+  <body>
+    <div class="fondo"></div>
+    <div>
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbar-toggler">
+            <a class="navbar-brand pt-md-2" href="index.html">
+              <img id="logo" src="img/logo.png" alt="logo" />
+            </a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div
+          class="collapse navbar-collapse text-sm-center justify-content-sm-end"
+          id="navbar-toggler"
+          >
+          <ul class="navbar-nav d-flex justify-content-center align-items-center">
+              <li class="nav-item pt-md-2 text-center active">
+                <a class="nav-link" href="todos_los_vehiculos.html">Todos los vehículos</a>
+              </li>
+              <li class="nav-item pt-md-2 text-center">
+                <a class="nav-link" href="vehiculos_nuevos.html">Vehículos nuevos</a>
+              </li>
+              <li class="nav-item pt-md-2 text-center">
+                <a class="nav-link" href="vehiculos_usados.html">Vehículos usados</a>
+              </li>
+              <li class="nav-item pt-md-2 text-center">
+                <a class="nav-link" href="vende_tu_vehiculo.html">Vende tu vehículo HA!</a>
+              </li>
+              
+              <!-- BOTON DE LOGIN -->
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="bi bi-person-circle"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="login.html">
+                    <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    <i class="bi bi-person-add"></i> Crear Cuenta
+                  </a>
+                  <a class="dropdown-item" href="reserva_carrito.html" id="carrito-reserva">
+                    <i class="bi bi-cart"></i> Reservas
+                  </a>
+                </div>
+              </div>
+          </ul>
+        </div>
+      </div>
+      </nav>
+      <!-- FIN NAVBAR -->
+
+      <!-- HEADER -->
+      <header class="masthead text-center">
+        <div class="masthead-content">
+          <div class="container px-5">
+            <h1 class="masthead-heading mb-0">Vehículos Medianos</h1>
+            <h2 class="masthead-subheading mb-0">¿Listo para tu nuevo auto?</h2>
+          </div>
+        </div>
+      </header>
+
+      <!-- DIVISOR -->
+      <hr />
+
+      <!-- USADO 1 -->
+      <div class="centrado">
+        <div class="card" style="width: 50rem">
+          <div id="usado1" class="carousel slide">
+            <div
+              class="carousel-inner"
+              style="
+                border-top-left-radius: 63px;
+                border-top-right-radius: 63px;
+              "
+            >
+              <div class="carousel-item active">
+                <img
+                  src="img/v_usados/vu_1_1.jpg"
+                  class="d-block w-100"
+                  alt="vu_1_1"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_1_2.jpg"
+                  class="d-block w-100"
+                  alt="v_1_2"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_1_3.jpg"
+                  class="d-block w-100"
+                  alt="vu_1_3"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_1_4.jpg"
+                  class="d-block w-100"
+                  alt="vu_1_4"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_1_5.jpg"
+                  class="d-block w-100"
+                  alt="vu_1_5"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_1_6.jpg"
+                  class="d-block w-100"
+                  alt="vu_1_6"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_1_7.jpg"
+                  class="d-block w-100"
+                  alt="vu_1_7"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#usado1"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#usado1"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="row" style="height: fit-content">
+              <div class="col-sm">
+                <h5 class="card-title text-center">
+                  2021 Mazda CX-9 GTX 2.5 AWD PLUS
+                </h5>
+              </div>
+              <div class="col-3 text-center">
+                <h4
+                  style="
+                    border-style: outset;
+                    border-color: rgb(232, 69, 69);
+                    background-color: rgba(232, 69, 69, 20%);
+                    border-radius: 20px;
+                  "
+                >
+                  $35.000.000
+                </h4>
+              </div>
+              <p style="height: 1px; font-style: oblique" class="text-center">
+                Vitacura, Región Metropolitana
+              </p>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush align-items-center">
+            <div
+              class="row w-100"
+              style="font-family: Arial, Helvetica, sans-serif"
+            >
+              <div class="col text-center" style="padding: 5px">
+                <li class="list-group-item">2.500 Km</li>
+                <li class="list-group-item">Automático</li>
+                <li class="list-group-item">Bencina</li>
+              </div>
+              <div class="col text-center" style="padding: 5px">
+                <li class="list-group-item">Único dueño</li>
+                <li class="list-group-item">Para 7 pasajeros</li>
+                <li class="list-group-item">11 Kms/Lt.</li>
+              </div>
+            </div>
+          </ul>
+          <div class="card-body text-center">
+            <a href="error_404.html" class="card-link">
+              <small class="btn btn-bd-primary" style="background-color: rgb(229, 149, 149);">Contactar al Vendedor</small>
+            </a>
+            <a href="error_404.html" class="card-link">
+              <small class="btn btn-bd-primary">Reservar</small>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- FIN USADO 1 -->
+
+      <!-- USADO 2 -->
+      <div class="centrado">
+        <div class="card" style="width: 50rem">
+          <div id="usado2" class="carousel slide">
+            <div
+              class="carousel-inner"
+              style="
+                border-top-left-radius: 63px;
+                border-top-right-radius: 63px;
+              "
+            >
+              <div class="carousel-item active">
+                <img
+                  src="img/v_usados/vu_2_1.png"
+                  class="d-block w-100"
+                  alt="vu_2_1"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_2_2.png"
+                  class="d-block w-100"
+                  alt="vu_2_2"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_2_3.png"
+                  class="d-block w-100"
+                  alt="vu_2_3"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_2_4.png"
+                  class="d-block w-100"
+                  alt="vu_2_4"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_2_5.png"
+                  class="d-block w-100"
+                  alt="vu_2_5"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_2_6.png"
+                  class="d-block w-100"
+                  alt="vu_2_6"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/v_usados/vu_2_7.png"
+                  class="d-block w-100"
+                  alt="vu_2_7"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#usado2"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#usado2"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="card-body">
+            <div class="row" style="height: fit-content">
+              <div class="col-sm">
+                <h5 class="card-title text-center">
+                  2022 Subaru Outback 2.5I CVT Field Edition 4WD
+                </h5>
+              </div>
+              <div class="col-3 text-center">
+                <h4
+                  style="
+                    border-style: outset;
+                    border-color: rgb(232, 69, 69);
+                    background-color: rgba(232, 69, 69, 20%);
+                    border-radius: 20px;
+                  "
+                >
+                  $31.990.000
+                </h4>
+              </div>
+              <p style="height: 1px; font-style: oblique" class="text-center">
+                Puerto Montt, Región de Los Lagos
+              </p>
+            </div>
+          </div>
+          <ul class="list-group list-group-flush align-items-center">
+            <div
+              class="row w-100"
+              style="font-family: Arial, Helvetica, sans-serif"
+            >
+              <div class="col text-center" style="padding: 5px">
+                <li class="list-group-item">21.000 Km</li>
+                <li class="list-group-item">Automático</li>
+                <li class="list-group-item">Bencina</li>
+              </div>
+              <div class="col text-center" style="padding: 5px">
+                <li class="list-group-item">Único dueño</li>
+                <li class="list-group-item">Para 5 pasajeros</li>
+                <li class="list-group-item">12.2 Kms/Lt.</li>
+              </div>
+            </div>
+          </ul>
+          <div class="card-body text-center">
+            <a href="error_404.html" class="card-link">
+              <small class="btn btn-bd-primary" style="background-color: rgb(229, 149, 149);">Contactar al Vendedor</small>
+            </a>
+            <a href="error_404.html" class="card-link">
+              <small class="btn btn-bd-primary">Reservar</small>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- FIN USADO 2 -->
+
+      <!-- FOOTER -->
+      <footer
+        class="custom-footer d-flex justify-content-center align-items-center"
+      >
+        <div class="footer-container">
+          <div class="footer-row text-center">
+            <div class="footer-column">
+              <h3>Nosotros</h3>
+              <p>
+                Somos una empresa dedicada a ofrecer soluciones de movilidad a
+                nuestros clientes.
+              </p>
+            </div>
+            <div class="footer-column">
+              <h3>Contacto</h3>
+              <ul>
+                <li>
+                  <i class="fas fa-map-marker-alt"></i> 1234 Calle Principal,
+                  Ciudad
+                </li>
+                <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                <li><i class="fas fa-envelope"></i> info@ejemplo.com</li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>Síguenos</h3>
+              <ul class="footer-social">
+                <li>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-center">
+              &copy; 2023 Todos los Derechos Reservados - Motores HA
+            </p>
+          </div>
+        </div>
+      </footer>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+        crossorigin="anonymous"
+      ></script>
+    </div>
+  </body>
+</html>
