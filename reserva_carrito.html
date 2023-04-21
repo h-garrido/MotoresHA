@@ -1,109 +1,256 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+
     <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-      crossorigin="anonymous"
-    ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
 
     <!-- ICONOS BOOTSTRAP -->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
-   
+
     <!-- FONT AWESOME -->
-    
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
     <!-- ARCHIVO STYLE.CSS -->
 
     <link rel="stylesheet" href="css/style.css" />
-    
+
     <!-- IMAGEN DE FONDO -->
     <style>
-      .fondo {
-        position: fixed;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        background-image: url("img/background.jpg");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        opacity: 0.3;
-        filter: blur(3px) grayscale(100%);
-      }
+        .fondo {
+            position: fixed;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background-image: url("img/background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            filter: blur(3px) grayscale(100%);
+        }
     </style>
-    <title>Motores HA</title>
-  </head>
-  <body>
+
+    <!-- VALIDACIONES FORMULARIO MODAL -->
+    <script>
+        function validateForm(e) {
+            e.preventDefault();
+
+            if (!validateNombre() || !validateApellidos() || !validateRut() || !validateDomicilio() || !validateTelefono() || !validateEmail()) {
+                return false;
+            }
+
+            // Aquí puedes agregar la lógica para enviar el formulario, si todas las validaciones son correctas.
+            console.log("Formulario enviado correctamente");
+            alert("Formulario enviado correctamente");
+        }
+
+        function validateNombre() {
+            const nombre = document.getElementById("nombre");
+            if (nombre.value.trim() === "") {
+                alert("El campo Nombres no puede estar vacío.");
+                return false;
+            }
+
+            const nombrePattern = /^[a-zA-ZÁÉÍÓÚáéíóúñÑüÜ]+(\s[a-zA-ZÁÉÍÓÚáéíóúñÑüÜ]+)*$/;
+            if (!nombrePattern.test(nombre.value)) {
+                alert("El campo Nombres solo puede contener letras, espacios y letras con tildes.");
+                return false;
+            }
+            return true;
+        }
+
+        function validateApellidos() {
+            const apellidos = document.getElementById("apellidos");
+            if (apellidos.value.trim() === "") {
+                alert("El campo Apellidos no puede estar vacío.");
+                return false;
+            }
+
+            const apellidosPattern = /^[a-zA-ZÁÉÍÓÚáéíóúñÑüÜ]+(\s[a-zA-ZÁÉÍÓÚáéíóúñÑüÜ]+)*$/;
+            if (!apellidosPattern.test(apellidos.value)) {
+                alert("El campo Apellidos solo puede contener letras, espacios y letras con tildes.");
+                return false;
+            }
+            return true;
+        }
+
+
+        function validateRut() {
+            const rut = document.getElementById("rut");
+            if (rut.value.trim() === "") {
+                alert("El campo RUT no puede estar vacío.");
+                return false;
+            }
+
+            const rutPattern = /^(\d{1,2}\.\d{3}\.\d{3})-([\dkK])$/;
+            const cleanRutPattern = /^(\d{1,8})-([\dkK])$/;
+            let cleanRut = rut.value.replace(/\./g, "");
+
+            if (!rutPattern.test(cleanRut) && !cleanRutPattern.test(cleanRut)) {
+                alert("El RUT ingresado no tiene un formato válido. El formato debe, al menos, tener el guión");
+                return false;
+            }
+
+            const rutParts = cleanRut.split("-");
+            const rutNumber = parseInt(rutParts[0], 10);
+            const dv = rutParts[1].toUpperCase();
+
+            if (calculateDV(rutNumber) !== dv) {
+                alert("El dígito verificador ingresado es incorrecto.");
+                return false;
+            }
+
+            const formattedRut = formatRut(rutNumber) + "-" + dv;
+            console.log("RUT final: " + formattedRut);
+            return true;
+        }
+
+        function calculateDV(rutNumber) {
+            let sum = 0;
+            let factor = 2;
+
+            for (let i = rutNumber.toString().length - 1; i >= 0; i--) {
+                sum += rutNumber.toString().charAt(i) * factor;
+                factor = (factor === 7) ? 2 : factor + 1;
+            }
+
+            const mod = sum % 11;
+            return mod === 0 ? "0" : mod === 1 ? "K" : 11 - mod + "";
+        }
+
+        function formatRut(rutNumber) {
+            return rutNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+
+
+        function validateDomicilio() {
+            const domicilio = document.getElementById("domicilio");
+            if (domicilio.value.trim() === "") {
+                alert("El campo Domicilio no puede estar vacío.");
+                return false;
+            }
+
+            const domicilioPattern = /^[a-zA-Z0-9ÁÉÍÓÚáéíóúñÑüÜ\s]+$/;
+            if (!domicilioPattern.test(domicilio.value)) {
+                alert("El campo Domicilio solo puede contener letras, números, espacios y letras con tildes.");
+                return false;
+            }
+            return true;
+        }
+
+
+        function validateTelefono() {
+            const telefono = document.getElementById("telefono");
+            if (telefono.value.trim() === "") {
+                alert("El campo Teléfono no puede estar vacío.");
+                return false;
+            }
+
+            const telefonoPattern = /^\d{1,20}$/;
+            if (!telefonoPattern.test(telefono.value)) {
+                alert("El campo Teléfono solo puede contener hasta 20 números.");
+                return false;
+            }
+            return true;
+        }
+
+
+        function validateEmail() {
+            const email = document.getElementById("email");
+            if (email.value.trim() === "") {
+                alert("El campo Email no puede estar vacío.");
+                return false;
+            }
+
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email.value)) {
+                alert("El Email ingresado no tiene un formato válido.");
+                return false;
+            }
+            return true;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const submitButton = document.getElementById("submit-button");
+            submitButton.addEventListener("click", validateForm);
+        });
+
+    </script>
+</head>
+
+<body>
+    <!-- Aquí está tu código original -->
+</body>
+
+</html>
+
+
+</head>
+
+<body>
     <div class="fondo"></div>
     <div class="d-flex flex-column min-vh-100">
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-              <div class="collapse navbar-collapse" id="navbar-toggler">
-                <a class="navbar-brand pt-md-2" href="index.html">
-                  <img id="logo" src="img/logo.png" alt="logo" />
-                </a>
-              </div>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              
-              <div
-              class="collapse navbar-collapse text-sm-center justify-content-sm-end"
-              id="navbar-toggler"
-              >
-              <ul class="navbar-nav d-flex justify-content-center align-items-center">
-                  <li class="nav-item pt-md-2 text-center active">
-                    <a class="nav-link" href="todos_los_vehiculos.html">Todos los vehículos</a>
-                  </li>
-                  <li class="nav-item pt-md-2 text-center">
-                    <a class="nav-link" href="vehiculos_nuevos.html">Vehículos nuevos</a>
-                  </li>
-                  <li class="nav-item pt-md-2 text-center">
-                    <a class="nav-link" href="vehiculos_usados.html">Vehículos usados</a>
-                  </li>
-                  <li class="nav-item pt-md-2 text-center">
-                    <a class="nav-link" href="vende_tu_vehiculo.html">Vende tu vehículo HA!</a>
-                  </li>
-                  
-                  <!-- BOTON DE LOGIN -->
-                  <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      <i class="bi bi-person-circle"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="login.html">
-                        <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i class="bi bi-person-add"></i> Crear Cuenta
-                      </a>
-                      <a class="dropdown-item" href="reserva_carrito.html" id="carrito-reserva">
-                        <i class="bi bi-cart"></i> Reservas
-                      </a>
-                    </div>
-                  </div>
-              </ul>
+                <div class="collapse navbar-collapse" id="navbar-toggler">
+                    <a class="navbar-brand pt-md-2" href="index.html">
+                        <img id="logo" src="img/logo.png" alt="logo" />
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
+                    aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse text-sm-center justify-content-sm-end" id="navbar-toggler">
+                    <ul class="navbar-nav d-flex justify-content-center align-items-center">
+                        <li class="nav-item pt-md-2 text-center active">
+                            <a class="nav-link" href="todos_los_vehiculos.html">Todos los vehículos</a>
+                        </li>
+                        <li class="nav-item pt-md-2 text-center">
+                            <a class="nav-link" href="vehiculos_nuevos.html">Vehículos nuevos</a>
+                        </li>
+                        <li class="nav-item pt-md-2 text-center">
+                            <a class="nav-link" href="vehiculos_usados.html">Vehículos usados</a>
+                        </li>
+                        <li class="nav-item pt-md-2 text-center">
+                            <a class="nav-link" href="vende_tu_vehiculo.html">Vende tu vehículo HA!</a>
+                        </li>
+
+                        <!-- BOTON DE LOGIN -->
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="login.html">
+                                    <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-person-add"></i> Crear Cuenta
+                                </a>
+                                <a class="dropdown-item" href="reserva_carrito.html" id="carrito-reserva">
+                                    <i class="bi bi-cart"></i> Reservas
+                                </a>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
             </div>
-          </div>
         </nav>
         <!-- FIN NAVBAR -->
 
@@ -205,7 +352,7 @@
 
                                         <div class="mb-3">
                                             <label for="telefono" class="form-label">Teléfono</label>
-                                            <input id="telefono" type="number" class="form-control" />
+                                            <input id="telefono" type="text" class="form-control" />
                                         </div>
 
                                         <div class="mb-3">
@@ -217,7 +364,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                                     <a href="error_404.html">
-                                        <button type="submit" class="btn btn-success">
+                                        <button id="submit-button" type="submit" class="btn btn-success">
                                             <i class="bi bi-plus-circle"></i> Registrar Reserva
                                         </button>
                                     </a>
@@ -232,7 +379,7 @@
     </div>
     </div>
     </section>
-<hr>
+    <hr>
     </div> <!-- FOOTER -->
     <footer class="custom-footer d-flex justify-content-center align-items-center">
         <div class="footer-container">
@@ -279,4 +426,3 @@
 </body>
 
 </html>
-    
