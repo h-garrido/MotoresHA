@@ -338,7 +338,16 @@ hr {
 
 /* MAPS */
 #map {
-  height: 100%;
-  width: 100%;
+  height: 100%
+}
+
+.mapa {
+  height: 20rem;
+  max-width: 50rem;
+  margin: 50px auto;
+  border: 1rem;
+  border-style: outset;
+  border-color: rgb(255, 255, 255);
+  border-radius: 50px;
 }
 /* FIN MAPS */

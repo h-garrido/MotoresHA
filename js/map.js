@@ -2,9 +2,14 @@ let map;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
+    center: { lat: -33.3905, lng: -70.5724 },
+    zoom: 10,
+  });
+  new google.maps.Marker({
+    position: {lat: -33.3905, lng: -70.5724},
+    map,
+    title: "Mazda CX-9",
   });
 }
 
-window.initMap = initMap; 
+window.initMap = initMap;
