@@ -1,0 +1,46 @@
+{% extends 'motores_ha/base.html' %}
+{% load humanize %}
+{% block contenido %}
+
+    <section class="container">
+        <div class="table-hover table-responsive mt-5">
+            <table class="table table-striped">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Versión</th>
+                    <th>Año</th>
+                    <th>Kilometraje</th>
+                    <th>Transmisión</th>
+                    <th>Tracción</th>
+                    <th>Combustible</th>
+                    <th>Imagen</th>
+                    <th>Opciones</th>
+                    <th></th>
+                </tr>
+                {% for v in vehiculos %}
+                <tr>
+                    <td>{{v.nombre}}</td>
+                    <td>{{v.precio | intcomma}}</td>
+                    <td>{{v.marca}}</td>
+                    <td>{{v.modelo}}</td>
+                    <td>{{v.version}}</td>
+                    <td>{{v.anio}}</td>
+                    <td>{{v.kilometraje}}</td>
+                    <td>{{v.transmision}}</td>
+                    <td>{{v.traccion}}</td>
+                    <td>{{v.combustible}}</td>
+                    {% if v.imagen %}
+                    <td><img src="{{v.imagen.url}}" alt="imagen-vehiculo" class="w-100"></td>
+                    {% endif %}
+                    <td><a href="{% url 'modificar-vehiculo' v.id %}" class="btn btn-warning">Modificar</a></td>
+                    <td><a href="{% url 'eliminar-vehiculo' v.id %}" class="btn btn-danger">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+
+{% endblock %}

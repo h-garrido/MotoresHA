@@ -1,0 +1,278 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Motores HA!</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+      <link rel="stylesheet" href="{% static 'motores_ha/css/style.css' %}" />
+
+    <style>
+      .fondo {
+        position: fixed;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-image: url("{% static 'motores_ha/img/main_bg.jpeg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.5;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="fondo"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md pe-3">
+      <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <div class="container">
+          <img id="logo_navbar" src="{% static 'motores_ha/img/logo.png' %}" alt="logo" />
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <div class="d-flex justify-content-center text-center">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="todos_los_vehiculos.html">Todos los vehículos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nuevos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Usados</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menú
+              </a>
+              <ul class="dropdown-menu p-0 m-0">
+                <li><a class="dropdown-item" href="log_in.html">Iniciar sesión</a></li>
+                <li><a class="dropdown-item" href="sign_in.html">Registro</a></li>
+                <li><a class="dropdown-item" href="#">Reservas</a></li>
+                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </nav>
+    <!-- FIN NAVBAR -->
+  
+    <!-- HEADER -->
+    <div class="container-fluid">
+      <div class="row row-cols-1">
+        <div class="col text-center">
+          <h1 id="bienvenida" class="align-items-center">Bienvenido a Motores HA</h1>
+          <h3 class="align-items-center">Cientos de autos y más!</h3>
+        </div>
+      </div>
+    </div>
+    <!-- FIN HEADER -->
+
+    <hr>
+
+    <!-- CATEGORIAS -->
+    <section class="seccion" style="margin: 2rem;">
+      <div class="container-fluid">
+        <h1 id="categoria" class="text-center py-3">CATEGORÍAS</h1>
+        
+        <!-- CARDS -->
+        <div class="row row-cols-1 row-cols-lg-3">
+          <!-- CATEGORIA AUTOS -->
+          <div class="col mb-5">
+              <div class="card">
+                <img src="{% static 'motores_ha/img/categoria_auto.png' %}" class="img-fluid" alt="categoria_auto" />
+                <div class="card-body text-center">
+                  <h5 class="card-title">Automóviles</h5>
+                  <p class="card-text">
+                    Sedán, Coupé, Convertibles, Hatchback, City Car.
+                    <hr>
+                    <div id="auto_iconos">
+                      <marquee direction="right" style="height: 4rem;">
+                        <span style="position: relative; top: 10px; animation: move 0.4s infinite;">
+                          <img src="{% static 'motores_ha/img/hatchback_icon.png' %}" alt="hatchback_icon" width="120">
+                          <img src="{% static 'motores_ha/img/convertible_icon.png' %}" alt="convertible_icon" width="140">
+                          <img src="{% static 'motores_ha/img/hatchback2_icon.png' %}" alt="hatchback2_icon" width="120">
+                          <img src="{% static 'motores_ha/img/citycar_icon.png' %}" alt="citycar_icon" width="100">
+                          <img src="{% static 'motores_ha/img/sedan_icon.png' %}" alt="sedan_icon" width="140">
+                      </span>
+                    </marquee>
+                  </div>
+                </p>
+              </div>
+              <a href="automoviles.html">
+                <div class="card-footer text-center">
+                  <small class="btn btn-bd-primary w-50">Visitar categoría</small>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- FIN CATEGORIA AUTOS -->
+
+          <!-- CATEGORIA SUVS -->
+          <div class="col mb-5">
+            <div class="card">
+              <img src="{% static 'motores_ha/img/categoria_suv.png' %}" class="img-fluid" alt="categoria_suv" />
+              <div class="card-body text-center">
+                <h5 class="card-title">Vehículos Medianos</h5>
+                <p class="card-text">
+                  SUV, SUV Compactos, Sedán SUV, Station Wagon, Van
+                  <hr>
+                  <div id="suv_iconos">
+                    <marquee direction="right" style="height: 4rem;">
+                      <span style="position: relative; top: 4px; animation: move 0.4s infinite;">
+                        <img src="{% static 'motores_ha/img/suv_icon.png' %}" alt="suv_icon" width="120">
+                        <img src="{% static 'motores_ha/img/suv2_icon.png' %}" alt="suv2_icon" width="120">
+                        <img src="{% static 'motores_ha/img/suv3_icon.png' %}" alt="suv3_icon" width="120">
+                        <img src="{% static 'motores_ha/img/jeep_icon.png' %}" alt="suv4_icon" width="130" style="filter: opacity(70%);">
+                      </span>
+                    </marquee>
+                  </div>
+                </p>
+              </div>
+              <a href="vehiculos_medianos.html">
+                <div class="card-footer text-center">
+                  <small class="btn btn-bd-primary w-50">Visitar categoría</small>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- FIN CATEGORIA SUVS -->
+
+          <!-- CATEGORIA PICKUPS -->
+          <div class="col mb-5">
+            <div class="card">
+              <img src="{% static 'motores_ha/img/categoria_pickup.png' %}" class="img-fluid" alt="categoria_pickup" />
+              <div class="card-body text-center">
+                <h5 class="card-title">Camionetas</h5>
+                <p class="card-text">Compactas, Medianas, Grandes</p>
+                <hr>
+                <div id="pickup_iconos">
+                  <marquee direction="right" style="height: 5rem;">
+                    <span style="position: relative; top: 10px; animation: move 0.4s infinite;">
+                      <img src="{% static 'motores_ha/img/pickup_icon.png' %}" alt="pickup1_icon" width="130">
+                      <img src="{% static 'motores_ha/img/pickup2_icon.png' %}" alt="pickup2_icon" width="140">
+                      <img src="{% static 'motores_ha/img/pickup3_icon.png' %}" alt="pickup3_icon" width="140">
+                    </span>
+                  </marquee>
+                </div>
+              </div>
+              <a href="camionetas.html">
+                <div class="card-footer text-center">
+                  <small class="btn btn-bd-primary w-50">Visitar categoría</small>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- FIN CATEGORIA PICKUPS -->
+        </div>
+        <!-- FIN CARDS -->
+      </div>
+    </section>
+    <!-- FIN CATEGORIAS -->
+
+    <hr>
+
+    <!-- HEADER NOTICIAS-->
+    <div class="container-fluid py-3">
+      <div class="row row-cols-1">
+        <div class="col text-center">
+          <h1 class="align-items-center">NOTICIAS</h1>
+          <h4 class="align-items-center">Lo más relevante en el mundo automotriz</h4>
+        </div>
+      </div>
+    </div>
+    <!-- FIN HEADER NOTICIAS-->
+
+    <!-- CAROUSEL NOTICIAS -->
+    <div class="container w-75 py-3">
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'motores_ha/img/carousel_new_1.jpeg' %}" class="d-block w-100" alt="carousel_new_1">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Tesla Model S Plaid ¡Toda una máquina eléctrica!</h5>
+              <p>EI vehículo de Tesla realmente tiene bajo su hermosa
+                  carrocería un imponente tren eléctrico.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'motores_ha/img/carousel_new_2.jpg' %}" class="d-block w-100" alt="carousel_new_2">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Mazda CX-50 Meridian Edition: ¡Un SUV todoterreno!</h5>
+              <p>La versión Meridian Edition ahora todoterreno con neumáticos y
+                  rines especiales, además de mejoras visuales.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'motores_ha/img/carousel_new_3.jpg' %}" class="d-block w-100" alt="carousel_new_3">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Jeep Wrangler Rubicon 392</h5>
+              <p>476 CV para el Wrangler de producción más bestia.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- FIN CAROUSEL NOTICIAS -->
+
+    <!-- FOOTER -->
+    <div id="footer" class="container-fluid pb-1">
+      <footer class="py-2 my-2">
+        <ul class="nav justify-content-center border-bottom">
+          <li class="nav-item"><a href="index.html" class="nav-link px-2">Inicio</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Cómo vender</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Cómo comprar</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Foro</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2">Sobre nosotros</a></li>
+        </ul>
+          <p class="text-center text-white">© 2023 Motores HA!</p>
+      </footer>
+    </div>
+    <!-- FIN FOOTER -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+  </body>
+</html>

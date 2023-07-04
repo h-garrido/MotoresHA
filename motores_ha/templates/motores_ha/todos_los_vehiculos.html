@@ -1,0 +1,172 @@
+{% extends 'motores_ha/base.html' %}
+{% block contenido %}
+{% load humanize %}
+{% load static %}
+
+    <!-- HEADER -->
+    <div class="container-fluid">
+      <div class="row row-cols-1">
+        <div class="col text-center">
+          <h1 id="bienvenida" class="align-items-center">Todos los vehículos</h1>
+          <h3 class="align-items-center">¿Listo para tu nuevo auto?</h3>
+        </div>
+      </div>
+    </div>
+  <!-- FIN HEADER -->
+
+  <hr class="my-5">
+
+<!-- PESENTACION AUTO -->
+{% for v in vehiculos %}
+<div class="row mx-5">
+  <div class="col-xl-7">
+    <div class="card">
+      <div id="usado1" class="carousel slide">
+        <div class="carousel-inner" style="border-radius: 63px;">
+          <div class="carousel-item active">
+            {% if v.imagen %}
+            <img src="{{v.imagen.url}}" class="d-block w-100" alt="u_1_1"/>
+            {% endif %}
+          </div>
+          <!-- <div class="carousel-item">
+            <img src="{% static 'motores_ha/img/u_1_1.jpg' %}" class="d-block w-100" alt="u_1_2"/>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'motores_ha/img/u_1_3.jpg' %}" class="d-block w-100" alt="u_1_3"/>
+          </div> -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#usado1"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#usado1"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="carousel-caption">
+          <h3 id="precio_vehiculo">CLP {{v.precio | intcomma}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="contenedor_descp_auto" class="col-xl-5 pt-3" style="border-radius: 5%;">
+    <h3 id="nombre_auto" class="p-2 mb-3 rounded-pill text-center container">{{v.nombre}}</h3>
+    <div id="dscrp_auto" class="text-center">
+      <dl  class="row">
+        <dt class="col-4 ps-5">MARCA</dt>
+        <dd class="col">{{v.marca}}</dd>
+      </dl>
+      <dl  class="row">
+        <dt class="col-4 ps-5">MODELO</dt>
+        <dd class="col">{{v.modelo}}</dd>
+      </dl>
+      <dl  class="row">
+        <dt class="col-4 ps-5">VERSIÓN</dt>
+        <dd class="col">{{v.version}}</dd>
+      </dl>
+      <dl  class="row">
+        <dt class="col-4 ps-5">AÑO</dt>
+        <dd class="col">{{v.anio}}</dd>
+      </dl>
+      <dl  class="row">
+        <dt class="col-4 ps-5">KILOMETRAJE</dt>
+        <dd class="col">{{v.kilometraje}} km</dd>
+      </dl>
+      <dl  class="row">
+        <dt class="col-4 ps-5">TRANSMISIÓN</dt>
+        <dd class="col">{{v.transmision}}</dd>
+      </dl>
+      <dl  class="row">
+        <dt class="col-4 ps-5">TRACCIÓN</dt>
+        <dd class="col">{{v.traccion}}</dd>
+      </dl>
+      <dl  class="row">
+        <dt class="col-4 ps-5">COMBUSTIBLE</dt>
+        <dd class="col">{{v.combustible}}</dd>
+      </dl>
+    </div>
+
+    <!-- BTN UBICACION -->
+    <div class="row d-flex justify-content-center px-5">
+      <button id="boton_ubicacion" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Ver ubicación</button>
+    </div>
+    <!-- FIN BTN UBICACION -->
+
+    <!-- BTN DETALLES - RESERVAS -->
+    <div class="row d-flex justify-content-center px-5">
+      <button id="boton_detalles_reserva" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Contactar al vendedor</button>
+    </div>
+    <!-- FIN BTN DETALLES - RESERVAS -->
+
+    <!-- OFFCANVA MAPA -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Ubicación del vehículo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="mapa">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+    <!-- FIN OFFCANVA MAPA -->
+
+    <!-- OFFCANVA DETALLES -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasBottomLabel">Contactar al vendedor</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <form action="">
+          <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre:</label>
+              <input id="nombre" type="text" class="form-control" required>
+          </div>
+      
+          <div class="mb-3">
+              <label for="telefono" class="form-label">Teléfono:</label>
+              <input id="telefono" type="text" class="form-control" required>
+          </div>
+      
+          <div class="mb-3">
+              <label for="correo" class="form-label">Correo electrónico:</label>
+              <input id="correo" type="email" class="form-control" required>
+          </div>
+      
+          <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje:</label>
+              <textarea id="mensaje" class="form-control" required></textarea>
+          </div>
+      
+          <button type="submit" id="boton_contactar" class="btn btn-primary">Contactar</button>
+      </form>
+      
+      </div>
+    </div>
+    <!-- FIN OFFCANVA DETALLES -->
+  </div>
+</div>
+
+<hr class="my-5">
+
+{% endfor %}
+<!-- FIN PESENTACION AUTO -->
+{% endblock %}

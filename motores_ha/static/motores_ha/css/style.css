@@ -1,0 +1,297 @@
+/* NAVBAR LOGO */
+#logo_navbar {
+  border-radius: 100px;
+  max-width: 15rem;
+  padding: 0px;
+  border: 1px;
+  border-style:solid;
+  border-color: rgb(255, 252, 242);
+  box-shadow: 0px 1px 10px 1px;
+}
+/* FIN NAVBAR LOGO */
+
+/* NAVBAR BACKGROUND */
+.navbar {
+  background: linear-gradient(
+    180deg,
+    rgba(48, 48, 48, 0.9) 1%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --bs-navbar-hover-color: rgb(48, 48, 48);
+}
+/* FIN NAVBAR BACKGROUND*/
+
+/* ELEMENTOS NAVBAR */
+.nav-link {
+  color: rgb(255, 252, 242);
+  font-variant-caps: all-petite-caps;
+  font-size: larger;
+  margin-right: 50px;
+  transition: transform 0.2s ease-in-out;
+}
+.nav-link:hover {
+  transform: scale(1.2);
+}
+/* FIN ELEMENTOS NAVBAR */
+
+/* CARDS */
+.card {
+  background-color: rgb(255, 252, 242);
+  --bs-img-overlay-padding: 20px;
+  --bs-border-radius: 66px;
+  border-color: rgb(48, 48, 48);
+  border-width: 1px;
+  box-shadow: 0px 1px 10px 1px;
+}
+/* FIN CARDS */
+
+/* CARDS IMAGENES */
+.img-fluid {
+  border-top-left-radius: 4em;
+  border-top-right-radius: 4em;
+}
+/* FIN CARDS IMAGENES */
+
+/* DIVISOR */
+hr{
+  border: 3px solid black;
+}
+/* FIN DIVISOR */
+
+/* MARQUEE ANIMACION */
+@keyframes move {
+  0% {
+    top: 1px;
+  }
+  50% {
+    top: 3px;
+  }
+  100% {
+    top: 1px;
+  }
+}
+/* FIN MARQUEE ANIMACION */
+
+/* TITULO BIENVENIDA */
+#bienvenida{
+  font-family: impact, sans-serif;
+  font-size: 50px;
+}
+/* FIN TITULO BIENVENIDA */
+
+/* BREAKPOINT CAPTIONS DEL CAROUSEL */
+@media screen and (max-width: 990px){
+  #carouselExampleCaptions .carousel-caption{
+    font-size: small;
+  }
+}
+/* FIN BREAKPOINT CAPTIONS DEL CAROUSEL */
+
+/* BOTON ANIMACION */
+.btn-bd-primary {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: white;
+  --bs-btn-bg: rgb(232, 69, 69);
+  --bs-btn-border-color: black;
+  --bs-btn-hover-color: black;
+  --bs-btn-hover-bg: white;
+  --bs-btn-hover-border-color: rgb(48, 48, 48);
+  transition: transform 0.2s ease-in-out;
+}
+.btn-bd-primary:hover {
+  transform: scale(1.2);
+}
+/* BOTON ANIMACION */
+
+/* FOOTER BACKGROUND */
+#footer{
+  background: linear-gradient(
+    0deg,
+    rgba(48, 48, 48, 0.9) 1%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+/* FIN FOOTER BACKGROUND */
+
+/* FOOTER ANIMACION ELEMENTOS */
+#footer .nav-link{
+  color: rgb(255, 255, 255);
+  font-variant-caps: all-petite-caps;
+  font-size: larger;
+  transition: transform 0.2s ease-in-out;
+}
+#footer .nav-link:hover {
+  color: rgb(48, 48, 48);
+}
+/* FIN FOOTER ANIMACION ELEMENTOS */
+
+/* NOMBRE AUTO */
+#nombre_auto{
+  background-color: rgb(196, 196, 196);
+  box-shadow: 0px 2px 5px 1px;
+  font-style: italic;
+}
+
+/* PRECIO AUTO */
+#precio_vehiculo{
+  font-family: 'Courier New', Courier, monospace;
+  position:absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: right;
+  width: auto;
+}
+
+@media screen and (max-width: 500px){
+  #precio_vehiculo{
+    font-size: 15px;
+  }
+  #nombre_auto{
+    font-size: 15px;
+  }
+}
+
+/* BOTON UBICACION */
+#boton_ubicacion{
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: white;
+  --bs-btn-bg: rgb(232, 69, 69);
+  --bs-btn-border-color: black;
+  --bs-btn-hover-color: black;
+  --bs-btn-hover-bg: white;
+  --bs-btn-hover-border-color: rgb(48, 48, 48);
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* BOTON DETALLES - RESERVA */
+#boton_detalles_reserva{
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: white;
+  --bs-btn-bg: rgb(232, 69, 69);
+  --bs-btn-border-color: black;
+  --bs-btn-hover-color: black;
+  --bs-btn-hover-bg: white;
+  --bs-btn-hover-border-color: rgb(48, 48, 48);
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 500px){
+  #dscrp_auto{
+    font-size: 10px;
+  }
+}
+
+/* DESCRIPCION AUTO */
+#contenedor_descp_auto{
+  background-color: rgb(255, 252, 242);
+  box-shadow: 0px 2px 5px 1px;
+}
+
+/* MAPS */
+#map {
+  height: 100%
+}
+
+.mapa {
+  height: 20rem;
+  max-width: 50rem;
+  margin: 50px auto;
+  border: 1rem;
+}
+/* FIN MAPS */
+
+
+#offcanvasBottom{
+  height: fit-content;
+}
+
+#boton_contactar{
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: white;
+  --bs-btn-bg: rgb(232, 69, 69);
+  --bs-btn-border-color: black;
+  --bs-btn-hover-color: black;
+  --bs-btn-hover-bg: white;
+  --bs-btn-hover-border-color: rgb(48, 48, 48);
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* ESTILO PARA EL REGISTRO */
+
+#form {
+  width: 300px;
+  margin: 2vh auto 0 auto;
+  margin-bottom: 2vh;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 10%);
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+#form h1 {
+  color: #0f2027;
+  text-align: center;
+}
+
+#form button {
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  color: white;
+  background-color: rgb(232, 69, 69);
+  border: none;
+  border-radius: 4px;
+}
+
+.input-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-size: 12px;
+  padding: 10px;
+  width: 100%;
+}
+
+.input-control input:focus {
+  outline: 0;
+}
+
+.input-control.success input {
+  border-color: #09c372;
+}
+
+.input-control.error input {
+  border-color: #ff3860;
+}
+
+.input-control .error {
+  color: #ff3860;
+  font-size: 9px;
+  height: 13px;
+}
+/* FIN ESTILO PARA EL REGISTRO */
+
+/* BOTON ANIMACION */
+.btn-primary {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: white;
+  --bs-btn-bg: rgb(232, 69, 69);
+  --bs-btn-border-color: black;
+  --bs-btn-hover-color: black;
+  --bs-btn-hover-bg: white;
+  --bs-btn-hover-border-color: rgb(48, 48, 48);
+  transition: transform 0.2s ease-in-out;
+}
+.btn-primary:hover {
+  transform: scale(1.1);
+}
+/* BOTON ANIMACION */
