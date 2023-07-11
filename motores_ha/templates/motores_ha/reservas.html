@@ -1,0 +1,73 @@
+{% extends 'motores_ha/base.html' %}
+{% load humanize %}
+{% load static %}
+
+{% block contenido %}
+  <!-- HEADER -->
+  <div class="container-fluid">
+    <div class="row row-cols-1">
+      <div class="col text-center">
+        <h1 id="bienvenida" class="align-items-center">Reservas</h1>
+        <h3 class="align-items-center">Lista de vehículos reservados</h3>
+      </div>
+    </div>
+  </div>
+  <!-- FIN HEADER -->
+
+  <hr class="my-5">
+
+  <section class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="table-responsive table-hover">
+          <table class="table table-striped">
+            <tr>
+              <th>Nombre</th>
+              <th>Imagen</th>
+              <th>Valor</th>
+              <th>Opción</th>
+              <th></th>
+            </tr>
+        
+            {% for reserva in reservas %}
+              <tr>
+                <td>{{ reserva.vehiculo.nombre }}</td>
+                {% if reserva.vehiculo.imagen %}
+                <td>
+                  <img class="w-25" src="{{ reserva.vehiculo.imagen.url }}" alt="imagen_carrito">
+                </td>
+                {% endif %}
+                <td>{{ reserva.precio_reserva | intcomma }}</td>
+                <td>
+                  <form action="{% url 'eliminar-reserva' reserva.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                  </form>
+                </td>
+                <td></td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+      <div class="col-md-4">
+            <div class="table-responsive table-hover">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Resumen de compra</th>
+                    <th></th> 
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Total de tu compra:</td>
+                    <td>${{ total_reservas | intcomma }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

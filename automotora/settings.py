@@ -129,6 +129,8 @@ import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+GOOGLE_MAPS_API_KEY = "AIzaSyBPG8HuIYE5bGPwz2wF_uOUowXXq_-WWr8"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

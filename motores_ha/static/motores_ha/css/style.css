@@ -38,9 +38,9 @@
 .card {
   background-color: rgb(255, 252, 242);
   --bs-img-overlay-padding: 20px;
-  --bs-border-radius: 66px;
+  --bs-border-radius: 65px;
   border-color: rgb(48, 48, 48);
-  border-width: 1px;
+  border-width: 2px;
   box-shadow: 0px 1px 10px 1px;
 }
 /* FIN CARDS */
@@ -138,9 +138,10 @@ hr{
   position:absolute;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(117, 0, 0, 0.638);
   text-align: right;
-  width: auto;
+  width: fit-content;
+  border-radius: 65px;
 }
 
 @media screen and (max-width: 500px){
@@ -295,3 +296,30 @@ hr{
   transform: scale(1.1);
 }
 /* BOTON ANIMACION */
+
+.badge{
+  font-size: 20px;
+}
+
+#formulario_vehiculo{
+  background-color: rgb(255, 252, 242);
+  --bs-img-overlay-padding: 20px;
+  --bs-border-radius: 66px;
+  border-color: rgb(48, 48, 48);
+  border-width: 50px;
+}
+
+#tabla_vehiculos{
+  width: fit-content;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#img_veh_tabla{
+  border-radius: 20%;
+  border-color: black;
+  border-width: 5px;
+  border-style: double;
+  max-width: 300px;
+  aspect-ratio: 16/9;
+}

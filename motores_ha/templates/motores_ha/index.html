@@ -36,7 +36,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md pe-3">
       <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
+      <a class="navbar-brand" href="{% url 'index' %}">
         <div class="container">
           <img id="logo_navbar" src="{% static 'motores_ha/img/logo.png' %}" alt="logo" />
         </div>
@@ -56,22 +56,24 @@
         <div class="d-flex justify-content-center text-center">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="todos_los_vehiculos.html">Todos los vehículos</a>
+              <a class="nav-link" aria-current="page" href="{% url 'todos-los-vehiculos' %}">Todos los vehículos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Nuevos</a>
+              <a class="nav-link" href="{% url 'condicion-nuevo' %}">Nuevos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Usados</a>
+              <a class="nav-link" href="{% url 'condicion-usado' %}">Usados</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Menú
               </a>
               <ul class="dropdown-menu p-0 m-0">
-                <li><a class="dropdown-item" href="log_in.html">Iniciar sesión</a></li>
-                <li><a class="dropdown-item" href="sign_in.html">Registro</a></li>
-                <li><a class="dropdown-item" href="#">Reservas</a></li>
+                <li><a class="dropdown-item" href="{% url 'log-in' %}">Iniciar sesión</a></li>
+                <li><a class="dropdown-item" href="{% url 'sign-in' %}">Registro</a></li>
+                <li><a class="dropdown-item" href="{% url 'reservas' %}">Reservas</a></li>
+                <li><a class="dropdown-item" href="{% url 'agregar-vehiculo' %}">Agregar Vehículo</a></li>
+                <li><a class="dropdown-item" href="{% url 'listar-vehiculo' %}">Lista de Vehículos</a></li>
                 <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
               </ul>
             </li>
@@ -124,7 +126,7 @@
                   </div>
                 </p>
               </div>
-              <a href="automoviles.html">
+              <a href="{% url 'categoria-auto' %}">
                 <div class="card-footer text-center">
                   <small class="btn btn-bd-primary w-50">Visitar categoría</small>
                 </div>
@@ -154,7 +156,7 @@
                   </div>
                 </p>
               </div>
-              <a href="vehiculos_medianos.html">
+              <a href="{% url 'categoria-suv' %}">
                 <div class="card-footer text-center">
                   <small class="btn btn-bd-primary w-50">Visitar categoría</small>
                 </div>
@@ -181,7 +183,7 @@
                   </marquee>
                 </div>
               </div>
-              <a href="camionetas.html">
+              <a href="{% url 'categoria-camioneta' %}">
                 <div class="card-footer text-center">
                   <small class="btn btn-bd-primary w-50">Visitar categoría</small>
                 </div>
@@ -261,9 +263,56 @@
           <li class="nav-item"><a href="#" class="nav-link px-2">Cómo vender</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2">Cómo comprar</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2">Foro</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2">Sobre nosotros</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" role="button" aria-controls="offcanvasRight">Sobre nosotros</a></li>
         </ul>
-          <p class="text-center text-white">© 2023 Motores HA!</p>
+
+        <!-- OFFCANVA MAPA -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Ubicación</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="mapa">
+              <div id="map"></div><br>
+              <h2>Sobre nosotros.</h2>
+              <p>En Motores HA, su confianza es nuestra máxima prioridad. 
+                Con más de 30 años de trayectoria en la industria del automóvil, 
+                nos enorgullece ser el distribuidor preferido de vehículos de alta calidad en nuestra región. 
+                Nuestra misión es ofrecer a nuestros valiosos clientes no solo coches de calidad superior, 
+                sino también una experiencia de compra única e inolvidable. 
+                Creemos en el arte de la movilidad y el lujo de viajar con comodidad, 
+                y es por eso que cada vehículo en nuestro showroom es una cuidada selección que combina ingeniería de vanguardia, 
+                rendimiento óptimo y elegancia estética. 
+                Nuestro equipo de profesionales expertos y apasionados se dedica a ayudarle a encontrar el coche perfecto que se adapte a sus necesidades, 
+                presupuesto y estilo de vida. En Motores HA, llevamos la satisfacción del cliente más allá de la venta, 
+                proporcionando servicios posventa excepcionales para garantizar que su experiencia de conducción sea siempre la mejor. 
+                Invitamos a cada persona que sueña con un viaje perfecto a unirse a la familia Motores HA.
+              </p><br>
+            </div>
+          </div>
+        </div>
+        <!-- FIN OFFCANVA MAPA -->
+
+        <script>
+          function initMap() {
+            var ubicacion = {lat: -41.470, lng: -72.925}; // Actualiza con la latitud y longitud de tu ubicación
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 17,
+              center: ubicacion
+            });
+            var marker = new google.maps.Marker({
+              position: ubicacion,
+              map: map
+            });
+          }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API_KEY }}&callback=initMap">
+        </script>
+        <!-- Fin del código del mapa -->
+
+        <p class="text-center text-white">© 2023 Motores HA!</p>
       </footer>
     </div>
     <!-- FIN FOOTER -->
